@@ -14,6 +14,7 @@ let module = {
   },
 
   install (Vue, options) {
+    Vue.$api = api
     Vue.prototype.$api = api
 
     if (options.effect) ApiRequest.props.effect.default = options.effect

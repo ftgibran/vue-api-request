@@ -24,8 +24,6 @@
 </template>
 
 <style>
-  @import '../../node_modules/animate.css';
-
   .api-request .spinner {
     display: flex;
     align-items: center;
@@ -39,6 +37,7 @@
 </style>
 
 <script>
+  import 'animate.css'
   import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
   import GridLoader from 'vue-spinner/src/GridLoader.vue'
   import ClipLoader from 'vue-spinner/src/ClipLoader.vue'

@@ -18,7 +18,7 @@
 
 <script>
   export default {
-    name: 'Doc',
+    name: 'Example',
     data () {
       return {
         resp: null

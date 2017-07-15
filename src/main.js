@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import AppRouter from './service/AppRouter'
 import AppResource from './service/AppResource'
-import VueApiRequest from './module'
+import VueApiRequest from './index'
 import { TweenLite, Power2 } from 'gsap'
 
 VueApiRequest.setAPI(AppResource)
