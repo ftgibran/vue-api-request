@@ -1,9 +1,21 @@
 {
   "name": "vue-api-request",
   "version": "1.0.0",
-  "description": "A Vue component that controls APIs (call and loading) using vue-resource or axios.",
+  "description": "Vue component that controls APIs (call and loading) using vue-resource or axios",
+  "keywords": [
+    "api",
+    "request",
+    "vuejs",
+    "axios",
+    "vue-resource",
+    "ajax",
+    "loading",
+    "component"
+  ],
   "author": "Felipe Gibran Eleuterio Toledo <ft.gibran@gmail.com>",
-  "private": true,
+  "license": "MIT",
+  "main": "src/module.js",
+  "repository": "ftgibran/vue-api-request",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

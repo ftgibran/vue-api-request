@@ -1,0 +1,8 @@
+static
+test
+build
+config
+docs
+.*
+yarn.lock
+*.html

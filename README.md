@@ -1,6 +1,6 @@
 # vue-api-request
 
-> A Vue component that controls APIs (call and loading) using vue-resource or axios.
+> A Vue component that controls APIs (call and loading) using vue-resource or axios
 
 ## Build Setup
 
