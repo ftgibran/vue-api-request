@@ -9,12 +9,12 @@ export default {
   bar: (params) => Vue.$http.get('//api.dev/bar', params),
   foobar: () => Vue.$http.post('//api.dev/foobar').then(resp => { /* Some middle action */ }),
   foofoo: () => axios.get('//api.dev/foobar').then(resp => { /* Some middle action */ }),
-  testSuccess: (params) => {
+  fakeRequestSuccess: (params) => {
     return new Promise(resolve => {
       setTimeout(() => resolve(`Param1: ${params.foo}, Param2: ${params.bar}`), 2000)
     })
   },
-  testFail: () => {
+  fakeRequestFail: () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => reject({message: 'Something went wrong'}), 4000)
     })

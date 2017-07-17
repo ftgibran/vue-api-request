@@ -103,7 +103,7 @@
       },
       resp: { // default path response
         type: String,
-        'default': 'body'
+        'default': '.'
       },
       spinner: { // type of spinner
         type: String,
@@ -113,13 +113,13 @@
         type: String,
         'default': '#42b983'
       },
-      spinnerScale: { // spinner scale
-        type: Number,
-        'default': 1
-      },
       spinnerPadding: { // spinner padding
         type: [String, Number],
         'default': '1em'
+      },
+      spinnerScale: { // spinner scale
+        type: Number,
+        'default': 1
       }
     },
 

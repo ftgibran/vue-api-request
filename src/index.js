@@ -13,7 +13,7 @@ let module = {
     api = obj
   },
 
-  install (Vue, options) {
+  install (Vue, options = {}) {
     Vue.$api = api
     Vue.prototype.$api = api
 

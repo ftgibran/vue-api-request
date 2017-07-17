@@ -2,7 +2,7 @@
   <div>
 
     <api-request
-      :resource="$api.testSuccess"
+      :resource="$api.fakeRequestSuccess"
       v-model="resp"
       effect="blur"
       spinner="MoonLoader"
