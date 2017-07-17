@@ -6,6 +6,6 @@ docs
 .*
 yarn.lock
 *.html
-src/*
-!src/index.js
-!src/components/ApiRequest.vue
+#src/*
+#!src/index.js
+#!src/components/ApiRequest.vue

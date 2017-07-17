@@ -14,18 +14,20 @@ var module = {
   },
 
   install: function (Vue, options) {
+    var opt = options || {}
+
     Vue.$api = api
     Vue.prototype.$api = api
 
-    if (options.effect) ApiRequest.props.effect.default = options.effect
-    if (options.resp) ApiRequest.props.resp.default = options.resp
-    if (options.spinner) ApiRequest.props.spinner.default = options.spinner
-    if (options.spinnerColor) ApiRequest.props.spinnerColor.default = options.spinnerColor
-    if (options.spinnerScale) ApiRequest.props.spinnerScale.default = options.spinnerScale
-    if (options.spinnerPadding) ApiRequest.props.spinnerPadding.default = options.spinnerPadding
+    if (opt.effect) ApiRequest.props.effect.default = opt.effect
+    if (opt.resp) ApiRequest.props.resp.default = opt.resp
+    if (opt.spinner) ApiRequest.props.spinner.default = opt.spinner
+    if (opt.spinnerColor) ApiRequest.props.spinnerColor.default = opt.spinnerColor
+    if (opt.spinnerScale) ApiRequest.props.spinnerScale.default = opt.spinnerScale
+    if (opt.spinnerPadding) ApiRequest.props.spinnerPadding.default = opt.spinnerPadding
 
-    if (options.onSuccess) ApiRequest.methods.successCallback = options.onSuccess
-    if (options.onError) ApiRequest.methods.errorCallback = options.onError
+    if (opt.onSuccess) ApiRequest.methods.successCallback = opt.onSuccess
+    if (opt.onError) ApiRequest.methods.errorCallback = opt.onError
 
     ApiRequest.methods.customEffect = function (name, el) {
       var effect = module.effects.find(function (item) { return item.name === name })
