@@ -1,19 +1,19 @@
 import ApiRequest from './components/ApiRequest.vue'
 
-let api = {}
+var api = {}
 
-let module = {
+var module = {
   effects: [],
 
-  addEffect (name, func) {
-    module.effects.push({name, func})
+  addEffect: function (name, func) {
+    module.effects.push({name: name, func: func})
   },
 
-  setAPI (obj) {
+  setAPI: function (obj) {
     api = obj
   },
 
-  install (Vue, options = {}) {
+  install: function (Vue, options) {
     Vue.$api = api
     Vue.prototype.$api = api
 
@@ -27,8 +27,8 @@ let module = {
     if (options.onSuccess) ApiRequest.methods.successCallback = options.onSuccess
     if (options.onError) ApiRequest.methods.errorCallback = options.onError
 
-    ApiRequest.methods.customEffect = (name, el) => {
-      let effect = module.effects.find(item => item.name === name)
+    ApiRequest.methods.customEffect = function (name, el) {
+      var effect = module.effects.find(function (item) { return item.name === name })
       if (effect && typeof effect.func === 'function') {
         effect.func(el)
         return true
