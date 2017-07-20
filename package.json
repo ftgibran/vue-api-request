@@ -1,6 +1,6 @@
 {
   "name": "vue-api-request",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Vue component that controls APIs (call and loading) using vue-resource or axios",
   "keywords": [
     "api",
