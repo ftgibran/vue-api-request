@@ -219,6 +219,7 @@
       loadingEvent () {
         this.state = 'loading'
         this.$emit(this.state)
+        this.animate = null
       },
 
       successEvent () {
@@ -245,10 +246,7 @@
       runEffect () {
         let customEffect = this.customEffect(this.effect, this.$el)
         if (!customEffect) {
-          this.animate = null
-          this.$nextTick(() => {
-            this.animate = `animated ${this.effect}`
-          })
+          this.animate = `animated ${this.effect}`
         }
       },
 

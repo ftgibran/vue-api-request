@@ -1,22 +1,22 @@
-import Vue from 'vue'
-import VueResource from 'vue-resource'
 import axios from 'axios'
 
-Vue.use(VueResource)
-
 export default {
-  foo: (param1, param2) => () => Vue.$http.get('//api.dev/foo', {param1, param2}),
-  bar: (params) => Vue.$http.get('//api.dev/bar', params),
-  foobar: () => Vue.$http.post('//api.dev/foobar').then(resp => { /* Some middle action */ }),
-  foofoo: () => axios.get('//api.dev/foobar').then(resp => { /* Some middle action */ }),
-  fakeRequestSuccess: (params) => {
-    return new Promise(resolve => {
-      setTimeout(() => resolve(`Param1: ${params.foo}, Param2: ${params.bar}`), 2000)
-    })
-  },
-  fakeRequestFail: () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => reject({message: 'Something went wrong'}), 4000)
-    })
-  }
+  fakeRequest: (params = {}) => new Promise(resolve => {
+    setTimeout(() => resolve(params.response), params.time)
+  }),
+  giphyRandom: (params = {}) => axios.get(`//api.giphy.com/v1/gifs/random`, {
+    params: {
+      api_key: 'ceea3d73eee446f48e2a645e117b1f31',
+      tag: params.tag,
+      rating: params.rating
+    }
+  }),
+  giphySearch: (params = {}) => axios.get(`//api.giphy.com/v1/gifs/search`, {
+    params: {
+      api_key: 'ceea3d73eee446f48e2a645e117b1f31',
+      q: params.q,
+      limit: params.limit,
+      offset: params.offset
+    }
+  })
 }

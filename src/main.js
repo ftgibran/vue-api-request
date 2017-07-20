@@ -15,12 +15,9 @@ VueApiRequest.addEffect('blur', (el) => {
 })
 
 let options = {
-  effect: 'lightSpeedIn',
-  resp: '.',
-  spinner: 'DotLoader',
-  spinnerColor: '#364A5F',
-  spinnerScale: 1.4,
-  spinnerPadding: '2em',
+  effect: 'blur',
+  spinner: 'moonLoader',
+  spinnerColor: '#FC6094',
   onSuccess: resp => {
     console.log('Success', resp)
   },
