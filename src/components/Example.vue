@@ -12,8 +12,11 @@
           :spinner-scale="2"
           spinner-padding="62px"
         >
-          <img src="../assets/v-api@256.png">
-          <h1>API Request</h1>
+          <img src="../assets/v-api@512.png"
+               :style="{width: '256px'}"
+               alt="vue-api-resource"/>
+
+          <div class="v-api-logo">API REQUEST</div>
 
           <a href="//ftgibran.github.io/#/vue-api-request">Docs & Demo</a>
         </api-request>

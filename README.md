@@ -1,7 +1,7 @@
+![Vue API Request Icon](https://ftgibran.github.io/static/v-api@256.png)
 # Vue API Request
-![Vue API Request Icon](https://ftgibran.github.io/static/img/vue-api-request.3852bd2.png)
 
-> Control APIs (call and loading) using vue-resource or axios
+Vue API Request provides a full control on your APIs, making the calls simple, fast and easy to implement. Also, your code will be cleaner and more elegant.
 
 ## [Docs & Demo](https://ftgibran.github.io/#/vue-api-request)
 
@@ -80,9 +80,7 @@ The 'options' variable above is equivalent of:
 
 Go to [Demo & Docs](https://ftgibran.github.io/#/vue-api-request) to further informations.
 
-## Build Setup
-
-You can test this project by following these steps:
+## Contributing
 
 ``` bash
 # clone project
@@ -112,3 +110,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+Copyright (c) 2017 Felipe Gibran <ftgibran>
