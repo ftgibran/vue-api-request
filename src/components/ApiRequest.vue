@@ -230,7 +230,7 @@
         this.$emit(this.state, this.response)
         this.successCallback(this.response)
 
-        if (this.hasWaitingSlot && !this.hasSuccessSlot) this.waitingEvent()
+        if (this.hasWaitingSlot && !(this.hasSuccessSlot || this.hasLoadedSlot)) this.waitingEvent()
       },
 
       errorEvent (e) {
@@ -240,7 +240,7 @@
         this.$emit(this.state, e)
         this.errorCallback(e)
 
-        if (this.hasWaitingSlot && !this.hasErrorSlot) this.waitingEvent()
+        if (this.hasWaitingSlot && !(this.hasErrorSlot || this.hasLoadedSlot)) this.waitingEvent()
       },
 
       runEffect () {
