@@ -4,9 +4,14 @@ var api = {}
 
 var module = {
   effects: [],
+  loader: {},
 
   addEffect: function (name, func) {
     module.effects.push({name: name, func: func})
+  },
+
+  addLoader: function (name, component) {
+    Object.assign(module.loader, {[name]: component})
   },
 
   setAPI: function (obj) {
@@ -39,6 +44,7 @@ var module = {
     }
 
     Vue.component('ApiRequest', ApiRequest)
+    Vue.options.components['ApiRequest'].mixin({components: module.loader})
   }
 }
 

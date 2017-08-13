@@ -4,8 +4,12 @@ import AppRouter from './service/AppRouter'
 import AppResource from './service/AppResource'
 import VueApiRequest from './index'
 import { TweenLite, Power2 } from 'gsap'
+import CustomLoader from './components/CustomLoader.vue'
 
 VueApiRequest.setAPI(AppResource)
+
+VueApiRequest.addLoader('CustomLoader', CustomLoader)
+
 VueApiRequest.addEffect('blur', (el) => {
   el.style.filter = 'blur(10px)'
   TweenLite.to(el, 0.5, {
