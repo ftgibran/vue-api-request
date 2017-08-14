@@ -11,7 +11,9 @@ var module = {
   },
 
   addLoader: function (name, component) {
-    Object.assign(module.loader, {[name]: component})
+    var obj = {}
+    obj[name] = component
+    Object.assign(module.loader, obj)
   },
 
   setAPI: function (obj) {
