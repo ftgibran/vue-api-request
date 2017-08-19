@@ -1,4 +1,4 @@
-import ApiRequest from './components/ApiRequest.vue'
+import ApiRequest from './ApiRequest.vue'
 
 var api = {}
 
