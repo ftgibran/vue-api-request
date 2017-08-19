@@ -5,21 +5,22 @@ import AppResource from './service/AppResource'
 import VueApiRequest from './index'
 import { TweenLite, Power2 } from 'gsap'
 import CustomLoader from './components/CustomLoader.vue'
+import 'font-awesome/css/font-awesome.css'
 
 VueApiRequest.setAPI(AppResource)
 
 VueApiRequest.addLoader('CustomLoader', CustomLoader)
 
 VueApiRequest.addEffect('blur', (el) => {
-  el.style.filter = 'blur(10px)'
-  TweenLite.to(el, 0.5, {
+  el.style.filter = 'blur(20px)'
+  TweenLite.to(el, 1, {
     filter: 'blur(0)',
     ease: Power2.easeOut
   })
 })
 
 let options = {
-  effect: 'blur',
+  effect: 'zoomIn',
   spinner: 'moonLoader',
   spinnerColor: '#FC6094',
   onSuccess: resp => {

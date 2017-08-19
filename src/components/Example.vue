@@ -56,7 +56,6 @@
           :params="{time: 1000, response: !e3.liked}"
           v-model="e3.liked"
           :trigger.sync="e3.trigger"
-          effect="zoomIn"
           :spinner-scale="0.55"
           :spinner-padding="0"
         >
@@ -81,7 +80,6 @@
           :trigger.sync="e4.trigger"
           :sync="e4.offset"
           resp="data"
-          effect="zoomIn"
         >
           <form slot="waiting" @submit.prevent="e4.trigger=true">
             <div class="form-group">
@@ -117,6 +115,31 @@
 
       </div>
     </section>
+
+    <hr/>
+
+    <section>
+      <h2>Custom Loader & Effect</h2>
+
+      <api-request
+        :resource="$api.fakeRequest"
+        :params="{time: 3000}"
+        :trigger.sync="e5.trigger"
+        spinner="CustomLoader"
+        effect="blur"
+      >
+        <div slot="waiting">
+          <img src="../assets/v-api@512.png"
+               :style="{width: '256px'}"
+               alt="vue-api-resource"/>
+        </div>
+      </api-request>
+
+      <p>
+        <button @click="e5.trigger=true">Reload</button>
+      </p>
+    </section>
+
   </div>
 </template>
 
@@ -142,6 +165,9 @@
           q: null,
           offset: 0,
           resp: null
+        },
+        e5: {
+          trigger: false
         }
       }
     },

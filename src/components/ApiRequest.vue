@@ -78,8 +78,7 @@
     data () {
       return {
         animate: null,
-        state: null, // waiting, loading, success, error
-        response: {}
+        state: null // waiting, loading, success, error
       }
     },
 
@@ -168,6 +167,7 @@
         // Go to loading state
         this.loadingEvent()
 
+        let response = {}
         let resources = []
         let keys = []
         let path = this.resp
@@ -188,14 +188,14 @@
 
         Promise.all(resources).then(responses => {
           // if request has multiple requests then
-          if (keys.length !== 0) responses.forEach((resp, i) => { this.response[keys[i]] = index(resp, path) })
+          if (keys.length !== 0) responses.forEach((resp, i) => { response[keys[i]] = index(resp, path) })
           // if request is a single request then
-          else responses.forEach(resp => { this.response = index(resp, path) })
+          else responses.forEach(resp => { response = index(resp, path) })
           // Go to success state
-          this.successEvent()
-        }).catch(e => {
+          this.successEvent(response)
+        }).catch(resp => {
           // Go to error state
-          this.errorEvent(e)
+          this.errorEvent(resp)
         })
 
         // Get Object by string dot notation
@@ -213,32 +213,34 @@
 
       waitingEvent () {
         this.state = 'waiting'
-        this.$emit(this.state)
+        this.$emit('waiting')
       },
 
       loadingEvent () {
         this.state = 'loading'
-        this.$emit(this.state)
+        this.$emit('loading')
         this.animate = null
       },
 
-      successEvent () {
+      successEvent (resp) {
         this.state = 'success'
         this.runEffect()
-        this.$emit('input', this.response)
-        this.$emit('loaded', this.response)
-        this.$emit(this.state, this.response)
-        this.successCallback(this.response)
+        this.$emit('input', resp)
+        this.$emit('loaded', resp)
+        this.$emit('success', resp)
+        this.successCallback(resp)
+        this.$emit('afterSuccess', resp)
 
         if (this.hasWaitingSlot && !(this.hasSuccessSlot || this.hasLoadedSlot)) this.waitingEvent()
       },
 
-      errorEvent (e) {
+      errorEvent (resp) {
         this.state = 'error'
         this.runEffect()
-        this.$emit('loaded', e)
-        this.$emit(this.state, e)
-        this.errorCallback(e)
+        this.$emit('loaded', resp)
+        this.$emit('error', resp)
+        this.errorCallback(resp)
+        this.$emit('afterError', resp)
 
         if (this.hasWaitingSlot && !(this.hasErrorSlot || this.hasLoadedSlot)) this.waitingEvent()
       },

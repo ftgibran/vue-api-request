@@ -23,7 +23,7 @@ var module = {
   install: function (Vue, options) {
     var opt = options || {}
 
-    Vue.$api = api
+    Vue.api = api
     Vue.prototype.$api = api
 
     if (opt.effect) ApiRequest.props.effect.default = opt.effect
