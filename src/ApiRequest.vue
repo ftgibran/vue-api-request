@@ -177,12 +177,12 @@
         else if (key) {
           // if request has multiple requests and a specific key then
           keys.push(key)
-          resources.push(this.resource[key](this.params))
+          resources.push(this.resource[key](this.params && this.params[key]))
         } else {
           // if request has multiple requests then
           for (let key in this.resource) {
             keys.push(key)
-            resources.push(this.resource[key](this.params))
+            resources.push(this.resource[key](this.params && this.params[key]))
           }
         }
 
