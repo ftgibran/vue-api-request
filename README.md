@@ -1,4 +1,7 @@
-![Vue API Request Icon](https://ftgibran.github.io/static/v-api@256.png)
+<p align="center">
+  <img src="https://ftgibran.github.io/static/v-api@256.png"/>
+</p>
+
 # Vue API Request
 
 Vue API Request provides a full control on your APIs, making the calls simple, fast and easy to implement. Also, your code will be cleaner and more elegant.
@@ -33,7 +36,7 @@ Vue.use(VueApiRequest)
 
 ## Pre Configuration
 
-You may also set your own default configuration, so you don't need to customize every time each ApiRequest component. You are still able to customize a specific component using props. 
+You may also set your own default configuration, so you don't need to customize every time each ApiRequest component. You are still able to customize a specific component using props.
 
 ### Example
 
