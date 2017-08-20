@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://ftgibran.github.io/static/v-api@256.png"/>
+  <img width="256" height="256" src="https://ftgibran.github.io/static/v-api@512.png" alt="Vue API Request"/>
+  <br>
+  <a href="https://www.npmjs.com/package/vue-api-request"><img src="https://img.shields.io/npm/v/vue-api-request.svg"></a>
+  <a href="https://www.npmjs.com/package/vue-api-request"><img src="https://img.shields.io/npm/dt/vue-api-request.svg"></a>
+  <a href="https://www.npmjs.com/package/vue-api-request"><img src="https://img.shields.io/npm/l/vue-api-request.svg"></a>
 </p>
 
 # Vue API Request
