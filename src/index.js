@@ -50,4 +50,8 @@ var module = {
   }
 }
 
+if (typeof window !== 'undefined' && window.Vue) {
+  window.VueApiRequest = module
+}
+
 export default module
