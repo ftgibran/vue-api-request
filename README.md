@@ -14,10 +14,23 @@ Vue API Request provides a full control on your APIs, making the calls simple, f
 
 ## Installation
 
-Package is installable via npm.
+Package is installable via `NPM`.
 
 ```bash
 $ npm i vue-api-request --save
+```
+
+**or** via `Yarn`.
+
+```bash
+$ yarn add vue-api-request
+```
+
+**or** via `CDN`.
+
+```html
+<script src="https://unpkg.com/vue-api-request@latest/dist/vue-api-request.min.js"></script>
+<link href="https://unpkg.com/vue-api-request@latest/dist/vue-api-request.min.css" rel="stylesheet"/>
 ```
 
 ## Basic Usage
